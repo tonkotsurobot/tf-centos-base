@@ -21,7 +21,7 @@ node {
 	        }
         }
       	stage ('Deploy') {
-            sh "ls terraform-vmware-builder && terraform init -input=false && terraform plan -out=tfplan -input=false -var template_name=centos-base -var vm_name=test -var ip_address=192.168.1.21 -var vsphere_password=${VCENTER_PASS} -var vsphere_datastore=${DATASTORE} && terraform apply tfplan "
+            sh "terraform init -input=false ; terraform plan -out=tfplan -input=false -var template_name=centos-base -var vm_name=test -var ip_address=192.168.1.21 -var vsphere_password=${VCENTER_PASS} -var vsphere_datastore=${DATASTORE} ; terraform apply tfplan "
       	}
     } catch (err) {
         currentBuild.result = 'FAILED'
