@@ -1,0 +1,3 @@
+[submodule "terraform-vmware-builder"]
+	path = terraform-vmware-builder
+	url = https://github.com/tonkotsurobot/terraform-vmware-builder
