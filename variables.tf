@@ -6,4 +6,4 @@ variable "template_name" {}
 variable "vm_name" {}
 variable "ip_address" {}
 variable "vsphere_datastore" {}
-#variable "vsphere_cluster" {}
+variable "vsphere_cluster" {}

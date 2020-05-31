@@ -1,2 +1,26 @@
-Provision test VM from centos-base template to play around and destroy
-IP: 192.168.1.21
+Provision centos-base VM from centos-base template on vcenter 7.0
+
+#Set variables on your build machine
+export VCENTER_SERVER=CHANGEME
+export VCENTER_USERNAME=CHANGEME
+export VCENTER_PASSWORD=CHANGEME
+
+
+#download necessary terraform modules
+terraform init
+
+
+#Deploy machine
+terraform plan -out=tfplan -input=false -var template_name=centos-base -var vm_name=test -var ip_address=192.168.1.60 -var vsphere_password=${VCENTER_PASSWORD} -var vsphere_datastore=esx-nfs-1
+
+terraform apply "tfplan"
+
+OR 
+
+terraform apply -input=false -var template_name=centos-base -var vm_name=test -var ip_address=192.168.1.60 -var vsphere_password=${VCENTER_PASSWORD} -var vsphere_datastore=esx-nfs-1 -auto-approve
+
+
+
+#Destroy machine
+terraform destroy -input=false -var template_name=centos-base -var vm_name=test -var ip_address=192.168.1.60 -var vsphere_password=${VCENTER_PASSWORD} -var vsphere_datastore=esx-nfs-1 -auto-approve
+
