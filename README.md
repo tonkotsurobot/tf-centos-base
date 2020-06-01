@@ -20,7 +20,6 @@ OR
 terraform apply -input=false -var template_name=centos-base -var vm_name=test -var ip_address=192.168.1.60 -var vsphere_password=${VCENTER_PASSWORD} -var vsphere_datastore=esx-nfs-1 -auto-approve
 
 
-
 #Destroy machine
 terraform destroy -input=false -var template_name=centos-base -var vm_name=test -var ip_address=192.168.1.60 -var vsphere_password=${VCENTER_PASSWORD} -var vsphere_datastore=esx-nfs-1 -auto-approve
 
