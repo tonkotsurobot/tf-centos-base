@@ -1,9 +1,9 @@
 Provision centos-base VM from centos-base template on vcenter 7.0
 
 #Set variables on your build machine
-export VCENTER_SERVER=CHANGEME
-export VCENTER_USERNAME=CHANGEME
-export VCENTER_PASSWORD=CHANGEME
+export TF_VAR_vsphere_vcenter=CHANGEME
+export TF_VAR_vsphere_user=CHANGEME
+export TF_VAR_vsphere_password=CHANGEME
 
 
 #download necessary terraform modules
