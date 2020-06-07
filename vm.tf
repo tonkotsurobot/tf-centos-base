@@ -1,3 +1,9 @@
+terraform {
+  backend "local" {
+    path = "/mnt/nfs-drive-1/tf-centos-base/terraform.tfstate"
+  }
+}
+
 resource "vsphere_virtual_machine" "vm" {
   name             = var.vm_name
   datastore_id     = data.vsphere_datastore.datastore.id
