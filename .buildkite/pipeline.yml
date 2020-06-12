@@ -1,7 +1,9 @@
 steps:
   - trigger: "packer-centos-base"
     label: ":sidekiq: :packer: Builds centos-base VM template"
-
+    retry:
+      automatic: true
+      
   - wait
 
   - label: ":bowtie: :github: Read credentials"
