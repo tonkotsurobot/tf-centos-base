@@ -21,3 +21,6 @@ steps:
     plugins:
       - docker#v3.5.0:
           image: "een625:docker-builder"
+    agents:
+      docker: "true"
+      home: "true"
