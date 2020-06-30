@@ -2,8 +2,6 @@ version: '3'
 services:
   terraform:
     image: "een625/docker-builder"
-    volumes:
-      - .:/workdir
 
 #steps:  
 #  - label: ":bowtie: :github: Read credentials"
