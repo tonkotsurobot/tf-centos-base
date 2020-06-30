@@ -7,8 +7,7 @@ steps:
     plugins:
       - docker#v3.5.0:
           image: "een625/docker-bkagent:latest"
-          volumes:
-            - "/var/run/docker.sock:/var/run/docker.sock"
+
     agents:
       home: "true"
       docker: "true"
