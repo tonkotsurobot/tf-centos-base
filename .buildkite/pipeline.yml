@@ -12,6 +12,7 @@ steps:
           always-pull: true
           volumes:
             - "/mnt/tf-centos-base:/mnt/tf-centos-base"
+            - "/var/buildkite/builds:/var/buildkite/builds"
           #propagate-environment: true
 
 
