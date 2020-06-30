@@ -10,7 +10,7 @@ steps:
       - docker#v3.5.0:
           image: "een625/docker-builder:latest"
           volumes:
-            - "/mnt:/mnt"
+            - "/mnt/tf-centos-base:/mnt/tf-centos-base"
           #propagate-environment: true
 
 
