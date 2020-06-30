@@ -7,7 +7,7 @@ steps:
      - "echo $HOSTNAME"
     plugins:
       - docker#v3.5.0:
-          image: "een625/docker-bkagent:latest"
+          image: "een625/docker-builder:latest"
           propagate-environment: true
 
     agents:
