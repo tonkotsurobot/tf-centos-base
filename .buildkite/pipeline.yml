@@ -7,7 +7,10 @@ steps:
     plugins:
       - docker#v3.5.0:
           image: "een625/docker-builder:latest"
-          propagate-environment: true
+          volumes:
+            - "/mnt:/mnt"
+          #propagate-environment: true
+
 
     agents:
       docker: "true"
