@@ -21,7 +21,7 @@ steps:
     command: "ls /workdir"
     plugins:
       - docker-compose#v3.0.3:
-        run: terraform
+          run: terraform
     agents:
       docker: "true"
       home: "true"
