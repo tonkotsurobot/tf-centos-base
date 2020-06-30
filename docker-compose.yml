@@ -1,6 +1,6 @@
 version: '3'
 services:
-  tf-centos-base:
+  terraform:
     image: "een625/docker-builder"
 
 #steps:  

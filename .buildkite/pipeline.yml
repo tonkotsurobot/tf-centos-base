@@ -17,10 +17,11 @@
 #      home: "true"
 
 steps:
-  - command: "ls /workdir"
+  - name: "docker-compose test"
+    command: "ls /workdir"
     plugins:
-      - docker#v3.5.0:
-          image: "een625/docker-builder"
+      - docker-compose#v3.0.3:
+        run: terraform
     agents:
       docker: "true"
       home: "true"
