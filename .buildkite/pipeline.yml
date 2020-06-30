@@ -11,3 +11,4 @@ steps:
             - "/var/run/docker.sock:/var/run/docker.sock"
     agents:
       home: "true"
+      docker: "true"
