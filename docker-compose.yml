@@ -1,7 +1,7 @@
 version: '3'
 services:
   tf-centos-base:
-    image: "een625:docker-builder"
+    image: "een625/docker-builder"
 
 #steps:  
 #  - label: ":bowtie: :github: Read credentials"
