@@ -10,7 +10,6 @@ steps:
     agents:
       vm: "true"
       home: "true"
-      docker: "true"
 
   - name: "destroy resources"
     plugins:
@@ -20,7 +19,6 @@ steps:
     agents:
       vm: "true"
       home: "true"
-      docker: "true"
 
   - wait
   
