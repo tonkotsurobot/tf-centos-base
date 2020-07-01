@@ -5,8 +5,26 @@ steps:
   - name: "docker-compose test"
     plugins:
       docker-compose:
-        pull: terraform
-        run: terraform
+        pull: test
+        run: test
+    agents:
+      vm: "true"
+      home: "true"
+
+  - name: "destroy resources"
+    plugins:
+      docker-compose:
+        pull: destroy
+        run: destroy
+    agents:
+      vm: "true"
+      home: "true"
+
+- name: "build resources"
+    plugins:
+      docker-compose:
+        pull: build
+        run: build
     agents:
       vm: "true"
       home: "true"
