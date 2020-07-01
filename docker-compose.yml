@@ -1,13 +1,13 @@
 version: '3'
 services:
   terraform:
-    image: "een625/docker-builder"
+    image: een625/docker-builder
     volumes:
       - .:/workdir
       - /mnt/tf-centos-base:/mnt/tf-centos-base
     working_dir: /workdir
     entrypoint: sh
-    command: -c "ls -la /workdir"
+    command: -c "ls -la /workdir/scripts"
 
 #steps:  
 #  - label: ":bowtie: :github: Read credentials"
