@@ -2,8 +2,8 @@
 
 set -xe
 
-echo "see what's on /workdir"
-ls -la
-
-echo "see what's on /mnt/tf-centos-base"
-ls -la /mnt/nfs-drive-1/tf-centos-base
+echo "Ensure .tf files are clean"
+for file in *.tfvars
+do
+    terraform validate -var-file=${file}
+done
