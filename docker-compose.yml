@@ -1,0 +1,28 @@
+version: '3'
+services:
+  test:
+    image: een625/docker-builder
+    volumes:
+      - .:/workdir
+      - /mnt/nfs-drive-1:/mnt/nfs-drive-1
+    working_dir: /workdir
+    entrypoint: sh
+    command: -c "scripts/test.sh"
+
+  destroy:
+    image: een625/docker-builder
+    volumes:
+      - .:/workdir
+      - /mnt/nfs-drive-1:/mnt/nfs-drive-1
+    working_dir: /workdir
+    entrypoint: sh
+    command: -c "scripts/destroy.sh"
+
+  build:
+    image: een625/docker-builder
+    volumes:
+      - .:/workdir
+      - /mnt/nfs-drive-1:/mnt/nfs-drive-1
+    working_dir: /workdir
+    entrypoint: sh
+    command: -c "scripts/build.sh"

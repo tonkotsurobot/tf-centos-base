@@ -1,23 +1,34 @@
+env:
+  BUILDKITE_CLEAN_CHECKOUT: true
+
 steps:
+  - name: "validate .tf files"
+    plugins:
+      docker-compose:
+        pull: test
+        run: test
+    agents:
+      vm: "true"
+      home: "true"
+      docker: "true"
+
+  - name: "destroy resources"
+    plugins:
+      docker-compose:
+        pull: destroy
+        run: destroy
+    agents:
+      vm: "true"
+      home: "true"
+      docker: "true"
+
+  - wait
   
-  - label: ":bowtie: :github: Read credentials"
-    command: wget http://192.168.1.30:8000/scripts/terraform_vcenter_cred.sh -O /tmp/terraform_vcenter_cred.sh && chmod u+x /tmp/terraform_vcenter_cred.sh
+  - name: "build resources"
+    plugins:
+      docker-compose:
+        pull: build
+        run: build
     agents:
+      vm: "true"
       home: "true"
-      docker: "true"
-
-  - wait
-
-  - label: ":rage3: :terraform: Destroy VM"
-    command: . /tmp/terraform_vcenter_cred.sh && terraform init && terraform destroy -input=false -var template_name=centos-base -var vm_name=centos-vm -var ip_address=192.168.1.60  -var vsphere_datastore=esx-nfs-1 -auto-approve
-    agents:
-      home: "true"
-      docker: "true"
-
-  - wait
-
-  - label: ":partyparrot: :partyparrot: :partyparrot: :terraform: Deploy VM"
-    command: . /tmp/terraform_vcenter_cred.sh && terraform init && terraform apply -input=false -var template_name=centos-base -var vm_name=centos-vm -var ip_address=192.168.1.60  -var vsphere_datastore=esx-nfs-1 -auto-approve
-    agents:
-      home: "true"
-      docker: "true"
