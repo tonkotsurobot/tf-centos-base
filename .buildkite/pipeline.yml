@@ -20,6 +20,8 @@ steps:
       vm: "true"
       home: "true"
 
+  - wait
+  
   - name: "build resources"
     plugins:
       docker-compose:
