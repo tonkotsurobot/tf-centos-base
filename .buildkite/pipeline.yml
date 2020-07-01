@@ -5,8 +5,8 @@ steps:
   - name: "validate .tf files"
     plugins:
       docker-compose:
-        pull: test
-        run: test
+        pull: validate
+        run: validate
     agents:
       vm: "true"
       home: "true"

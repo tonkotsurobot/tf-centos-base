@@ -1,16 +1,24 @@
 version: '3'
 services:
-  test:
-    image: een625/docker-builder
+  validate:
+    image: hashicorp/terraform
+    environment:
+      - SSH_AUTH_SOCK=/ssh-agent
+      - GIT_SSH_COMMAND=ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no
+      - TF_INPUT=0
     volumes:
       - .:/workdir
       - /mnt/nfs-drive-1:/mnt/nfs-drive-1
     working_dir: /workdir
     entrypoint: sh
-    command: -c "scripts/test.sh"
+    command: -c "scripts/validate.sh"
 
   destroy:
-    image: een625/docker-builder
+    image: hashicorp/terraform
+    environment:
+      - SSH_AUTH_SOCK=/ssh-agent
+      - GIT_SSH_COMMAND=ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no
+      - TF_INPUT=0
     volumes:
       - .:/workdir
       - /mnt/nfs-drive-1:/mnt/nfs-drive-1
@@ -19,7 +27,11 @@ services:
     command: -c "scripts/destroy.sh"
 
   build:
-    image: een625/docker-builder
+    image: hashicorp/terraform
+    environment:
+      - SSH_AUTH_SOCK=/ssh-agent
+      - GIT_SSH_COMMAND=ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no
+      - TF_INPUT=0
     volumes:
       - .:/workdir
       - /mnt/nfs-drive-1:/mnt/nfs-drive-1
