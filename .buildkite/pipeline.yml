@@ -20,7 +20,7 @@ steps:
       vm: "true"
       home: "true"
 
-- name: "build resources"
+  - name: "build resources"
     plugins:
       docker-compose:
         pull: build
