@@ -7,7 +7,7 @@ services:
       - /mnt/tf-centos-base:/mnt/tf-centos-base
     working_dir: /workdir
     entrypoint: sh
-    command: -c "ls -la /workdir"
+    command: -c "scripts/test.sh"
 
 #steps:  
 #  - label: ":bowtie: :github: Read credentials"
