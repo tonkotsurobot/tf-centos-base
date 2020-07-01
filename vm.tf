@@ -39,7 +39,7 @@ resource "vsphere_virtual_machine" "vm" {
         ipv4_netmask = 24
       }
 
-      dns_server_list = ["192.168.1.254"]
+      dns_server_list = ["192.168.1.20"]
       dns_suffix_list = ["home"]
       ipv4_gateway    = "192.168.1.254"
     }
