@@ -18,7 +18,9 @@
 #    agents:
 #      docker: "true"
 #      home: "true"
-
+env:
+  BUILDKITE_CLEAN_CHECKOUT: true
+  
 steps:
   - name: "docker-compose test"
     plugins:
