@@ -1,6 +1,6 @@
 #!/bin/sh
 
-set -xeu
+set -xe
 
 echo "see what's on /workdir"
 ls -la
