@@ -4,7 +4,7 @@ services:
     image: een625/docker-builder
     volumes:
       - .:/workdir
-      - /mnt/tf-centos-base:/mnt/tf-centos-base
+      - /mnt/nfs-drive-1:/mnt/nfs-drive-1
     working_dir: /workdir
     entrypoint: sh
     command: -c "scripts/test.sh"
