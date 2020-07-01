@@ -3,10 +3,10 @@
 set -xeu
 
 echo "see what's on /workdir"
-ls -la /workdir
+ls -la
 
 echo "see what's on /mnt/tf-centos-base"
-ls -la /mnt/tf-centos-base
+ls -la
 #echo "+++ :terraform: Terraform Init"
 #terraform init -backend=false
 #

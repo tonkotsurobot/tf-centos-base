@@ -20,11 +20,11 @@
 #      home: "true"
 env:
   BUILDKITE_CLEAN_CHECKOUT: true
-  
+
 steps:
   - name: "docker-compose test"
     plugins:
-      docker-compose#v3.0.3:
+      docker-compose:
         pull: terraform
         run: terraform
     agents:
