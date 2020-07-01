@@ -1,31 +1,31 @@
-steps:  
-  - label: ":bowtie: :github: Read credentials"
-    command: 
-      - "buildkite-agent pipeline upload"
-      #- "wget http://192.168.1.30:8000/scripts/terraform_vcenter_cred.sh -O /tmp/terraform_vcenter_cred.sh && chmod u+x /tmp/terraform_vcenter_cred.sh && . /tmp/terraform_vcenter_cred.sh && env"
-      #- "wget http://192.168.1.30:8000/scripts/terraform_vcenter_cred.sh -O /tmp/terraform_vcenter_cred.sh && chmod u+x /tmp/terraform_vcenter_cred.sh && /tmp/terraform_vcenter_cred.sh && cd /workdir && terraform init && terraform destroy -input=false -var template_name=centos-base -var vm_name=centos-vm -var ip_address=192.168.1.60  -var vsphere_datastore=esx-nfs-1 -auto-approve"
-      #- "wget http://192.168.1.30:8000/scripts/terraform_vcenter_cred.sh -O /tmp/terraform_vcenter_cred.sh && chmod u+x /tmp/terraform_vcenter_cred.sh && /tmp/terraform_vcenter_cred.sh && cd /workdir && terraform init && terraform apply -input=false -var template_name=centos-base -var vm_name=centos-vm -var ip_address=192.168.1.60  -var vsphere_datastore=esx-nfs-1 -auto-approve"
-    plugins:
-      - docker#v3.5.0:
-          image: "een625/docker-bkagent"
-          always-pull: true
-          volumes:
-            - "/mnt/tf-centos-base:/mnt/tf-centos-base"
-          environment:
-            - "BUILDKITE_AGENT_ACCESS_TOKEN"
-          mount-buildkite-agent: false
-          propagate-environment: true
-    agents:
-      docker: "true"
-      home: "true"
-
-#steps:
-#  - name: "docker-compose test"
-#    command: "ls /workdir"
+#steps:  
+#  - label: ":bowtie: :github: Read credentials"
+#    command: 
+#      - "buildkite-agent pipeline upload"
+#      #- "wget http://192.168.1.30:8000/scripts/terraform_vcenter_cred.sh -O /tmp/terraform_vcenter_cred.sh && chmod u+x /tmp/terraform_vcenter_cred.sh && . /tmp/terraform_vcenter_cred.sh && env"
+#      #- "wget http://192.168.1.30:8000/scripts/terraform_vcenter_cred.sh -O /tmp/terraform_vcenter_cred.sh && chmod u+x /tmp/terraform_vcenter_cred.sh && /tmp/terraform_vcenter_cred.sh && cd /workdir && terraform init && terraform destroy -input=false -var template_name=centos-base -var vm_name=centos-vm -var ip_address=192.168.1.60  -var vsphere_datastore=esx-nfs-1 -auto-approve"
+#      #- "wget http://192.168.1.30:8000/scripts/terraform_vcenter_cred.sh -O /tmp/terraform_vcenter_cred.sh && chmod u+x /tmp/terraform_vcenter_cred.sh && /tmp/terraform_vcenter_cred.sh && cd /workdir && terraform init && terraform apply -input=false -var template_name=centos-base -var vm_name=centos-vm -var ip_address=192.168.1.60  -var vsphere_datastore=esx-nfs-1 -auto-approve"
 #    plugins:
-#      - docker-compose#v3.0.3:
-#          run: terraform
-#          workdir: /workdir
+#      - docker#v3.5.0:
+#          image: "een625/docker-bkagent"
+#          always-pull: true
+#          volumes:
+#            - "/mnt/tf-centos-base:/mnt/tf-centos-base"
+#          environment:
+#            - "BUILDKITE_AGENT_ACCESS_TOKEN"
+#          mount-buildkite-agent: false
+#          propagate-environment: true
 #    agents:
 #      docker: "true"
 #      home: "true"
+
+steps:
+  - name: "docker-compose test"
+    command: "ls /workdir"
+    plugins:
+      docker-compose#v3.0.3:
+        pull: terraform
+        run: terraform
+    agents:
+      docker: "true"
+      home: "true"
