@@ -2,7 +2,7 @@ env:
   BUILDKITE_CLEAN_CHECKOUT: true
 
 steps:
-  - name: "docker-compose test"
+  - name: "validate .tf files"
     plugins:
       docker-compose:
         pull: test
