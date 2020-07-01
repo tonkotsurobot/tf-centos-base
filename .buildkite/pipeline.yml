@@ -21,7 +21,6 @@
 
 steps:
   - name: "docker-compose test"
-    command: "ls /workdir"
     plugins:
       docker-compose#v3.0.3:
         pull: terraform
