@@ -28,5 +28,5 @@ steps:
         pull: terraform
         run: terraform
     agents:
-      docker: "true"
+      vm: "true"
       home: "true"
