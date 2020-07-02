@@ -1,7 +1,7 @@
 version: '3'
 services:
   validate:
-    image: hashicorp/terraform
+    image: hashicorp/terraform:0.12.28
     environment:
       - SSH_AUTH_SOCK=/ssh-agent
       - GIT_SSH_COMMAND=ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no
@@ -14,7 +14,7 @@ services:
     command: -c "scripts/validate.sh"
 
   destroy:
-    image: hashicorp/terraform
+    image: hashicorp/terraform:0.12.28
     environment:
       - SSH_AUTH_SOCK=/ssh-agent
       - GIT_SSH_COMMAND=ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no
@@ -27,7 +27,7 @@ services:
     command: -c "scripts/destroy.sh"
 
   build:
-    image: hashicorp/terraform
+    image: hashicorp/terraform:0.12.28
     environment:
       - SSH_AUTH_SOCK=/ssh-agent
       - GIT_SSH_COMMAND=ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no
