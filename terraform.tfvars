@@ -1,7 +1,5 @@
 vsphere_datacenter = "DC"
 vsphere_cluster = "HOME"
-vsphere_datacenter = "DC"
-vsphere_cluster = "HOME"
 template_name = "centos-base"
 vm_name = "centos-vm"
 ip_address = "192.168.1.60"
