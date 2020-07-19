@@ -1,4 +1,4 @@
-Provision centos based docker VM from centos-docker template on vcenter 7.0
+Provision centos based docker VM  from centos-docker template on vcenter 7.0
 
 #Set variables on your build machine
 export TF_VAR_vsphere_vcenter=CHANGEME
