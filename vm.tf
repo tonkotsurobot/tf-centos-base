@@ -1,7 +1,7 @@
 terraform {
   backend "local" {
     #path = "/mnt/nfs-drive-1/${REPO}/terraform.tfstate"
-    path = $BACKEND
+    #path = $BACKEND
   }
 }
 
