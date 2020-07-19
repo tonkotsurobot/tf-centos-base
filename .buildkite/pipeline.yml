@@ -11,6 +11,8 @@ steps:
       vm: "true"
       home: "true"
 
+  - wait
+
   - name: "destroy resources"
     plugins:
       docker-compose:

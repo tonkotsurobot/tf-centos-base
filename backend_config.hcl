@@ -1,0 +1,1 @@
+path = "/mnt/nfs-drive-1/tf-centos-base/terraform.tfstate"

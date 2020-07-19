@@ -13,6 +13,7 @@ services:
     entrypoint: sh
     command: -c "scripts/validate.sh"
 
+
   destroy:
     image: hashicorp/terraform:0.12.28
     environment:
@@ -26,6 +27,7 @@ services:
     entrypoint: sh
     command: -c "scripts/destroy.sh"
 
+
   build:
     image: hashicorp/terraform:0.12.28
     environment:
@@ -35,6 +37,7 @@ services:
     volumes:
       - .:/workdir
       - /mnt/nfs-drive-1:/mnt/nfs-drive-1
+    env_file: build.env
     working_dir: /workdir
     entrypoint: sh
     command: -c "scripts/build.sh"
