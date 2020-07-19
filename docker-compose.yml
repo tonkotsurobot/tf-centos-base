@@ -9,7 +9,7 @@ services:
     volumes:
       - .:/workdir
       - /mnt/nfs-drive-1:/mnt/nfs-drive-1
-    env_file: ../.env
+    env_file: ../build.env
     working_dir: /workdir
     entrypoint: sh
     command: -c "scripts/validate.sh"
@@ -23,7 +23,7 @@ services:
     volumes:
       - .:/workdir
       - /mnt/nfs-drive-1:/mnt/nfs-drive-1
-    env_file: ../.env
+    env_file: ../build.env
     working_dir: /workdir
     entrypoint: sh
     command: -c "scripts/destroy.sh"
@@ -37,7 +37,7 @@ services:
     volumes:
       - .:/workdir
       - /mnt/nfs-drive-1:/mnt/nfs-drive-1
-    env_file: ../.env
+    env_file: ../build.env
     working_dir: /workdir
     entrypoint: sh
     command: -c "scripts/build.sh"
