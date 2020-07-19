@@ -32,7 +32,7 @@ services:
     working_dir: /workdir
     entrypoint: sh
     command: -c "scripts/destroy.sh"
-    
+
 
   build:
     image: hashicorp/terraform:0.12.28
@@ -45,7 +45,7 @@ services:
       - /mnt/nfs-drive-1:/mnt/nfs-drive-1
     env_file: build.env
     environment:
-      - TEMPLATE_NAME
+      - TEMPLATE_NAME=test
       - VM_NAME
       - IP_ADDRESS
       - REPO
