@@ -9,4 +9,4 @@ chmod u+x /tmp/terraform_vcenter_cred.sh
 . /tmp/terraform_vcenter_cred.sh
 terraform init -backend-config=backend_config.hcl
 terraform destroy -auto-approve
-rm -rf .terraform
+sudo rm -rf .terraform
