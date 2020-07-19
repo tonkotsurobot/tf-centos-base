@@ -45,10 +45,10 @@ services:
       - /mnt/nfs-drive-1:/mnt/nfs-drive-1
     env_file: build.env
     environment:
-      - TEMPLATE_NAME=$TEMPLATE_NAME
-      - VM_NAME=$VM_NAME
-      - IP_ADDRESS=$IP_ADDRESS
-      - REPO=$REPO
+      - TEMPLATE_NAME=${TEMPLATE_NAME}
+      - VM_NAME=${VM_NAME}
+      - IP_ADDRESS=${IP_ADDRESS}
+      - REPO=${REPO}
     env_file: build.env
     working_dir: /workdir
     entrypoint: sh
