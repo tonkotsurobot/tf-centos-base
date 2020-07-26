@@ -1,1 +1,1 @@
-path = "/mnt/nfs-drive-1/tf-centos-base/terraform.tfstate"
+path = "/mnt/nfs-drive-1/tf-centos-base-plex/terraform.tfstate"
