@@ -1,25 +1,18 @@
-Provision centos-base VM from centos-base template on vcenter 7.0
-
-#Set variables on your build machine
-export TF_VAR_vsphere_vcenter=CHANGEME
-export TF_VAR_vsphere_user=CHANGEME
-export TF_VAR_vsphere_password=CHANGEME
+This is a buildkite pipeline that provisions a VM from a template on vcenter 7.0, using terraform.
 
 
-#download necessary terraform modules
-terraform init
+PREREQUISITE:
+1. vcenter creds are stored in "http://192.168.1.30:8000/scripts/terraform_vcenter_cred.sh". Modify scripts/* as necessary with the location of vcenter creds otherwise
+
+2. This repo assumes the following:
+vsphere_datacenter = "DC"
+vsphere_cluster = "HOME"
+vsphere_datastore = "esx-nfs-1"
+Modify terraform.tfvars as necessary otherwise
 
 
-#Deploy machine
-terraform plan -out=tfplan -input=false -var template_name=centos-base -var vm_name=test -var ip_address=192.168.1.60 -var vsphere_datastore=esx-nfs-1
 
-terraform apply "tfplan"
-
-OR 
-
-terraform apply -input=false -var template_name=centos-base -var vm_name=test -var ip_address=192.168.1.60 -var vsphere_datastore=esx-nfs-1 -auto-approve
-
-
-#Destroy machine
-terraform destroy -input=false -var template_name=centos-base -var vm_name=test -var ip_address=192.168.1.60 -var vsphere_datastore=esx-nfs-1 -auto-approve
+Steps:
+1. Update build.env
+2. PROFIT!!!
 
