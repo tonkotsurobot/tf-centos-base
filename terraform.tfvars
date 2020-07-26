@@ -1,6 +1,3 @@
 vsphere_datacenter = "DC"
 vsphere_cluster = "HOME"
-template_name = "centos-base"
-vm_name = "centos-plex"
-ip_address = "192.168.1.62"
 vsphere_datastore = "esx-nfs-1"
