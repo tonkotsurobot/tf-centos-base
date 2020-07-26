@@ -10,6 +10,8 @@ vsphere_cluster = "HOME"
 vsphere_datastore = "esx-nfs-1"
 Modify terraform.tfvars as necessary otherwise
 
+3. The spec of the VMs (CPU, RAM, NIC, DNS, etc) are specified in vm.tf
+
 
 
 Steps:
